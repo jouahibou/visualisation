@@ -9,7 +9,9 @@ from PIL import Image
 # Définir l'URL de la route de prédiction
 PREDICTION_URL = "http://localhost:8000/data_prediction_new_comment"
 
-df = import_data_from_es(host = "http://79.125.3.215:9200", index = "asurion")
+#df = import_data_from_es(host = "http://79.125.3.215:9200", index = "asurion")
+
+df = pd.read_csv("asurion_complete.csv")
 
 def predict_star_rating(review):
     params = {"review": review}
